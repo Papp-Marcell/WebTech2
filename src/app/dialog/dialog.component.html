@@ -1,0 +1,49 @@
+<h2 mat-dialog-title>Add/Edit Vehicle</h2>
+<p>You must change at least one thing to Edit the Vehicle in edit mode</p>
+<mat-dialog-content [formGroup]="form">
+
+    <mat-form-field>
+        <input matInput
+                placeholder="Number plate"
+               formControlName="number_plate">
+        <mat-error *ngIf="form.controls['number_plate'].invalid">abc-123, must be unique,required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput
+                placeholder="Make"
+               formControlName="make">
+        <mat-error *ngIf="form.controls['make'].invalid">required,letters only</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput
+                placeholder="Model"
+               formControlName="model">
+        <mat-error *ngIf="form.controls['model'].invalid">required,letters and numbers</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput
+                placeholder="Color"
+               formControlName="color">
+        <mat-error *ngIf="form.controls['color'].invalid">required,letters only</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput
+                placeholder="Horsepower"
+               formControlName="horsepower">
+        <span matSuffix>hp</span>
+        <mat-error *ngIf="form.controls['number_plate'].invalid">required,numbers only</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput
+                placeholder="Date"
+               formControlName="date">
+        <mat-error *ngIf="form.controls['number_plate'].invalid">required,numbers and - only</mat-error>
+    </mat-form-field>
+      
+ 
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button"(click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary"(click)="save()" [disabled]="form.pristine || form.invalid">Add</button>
+</mat-dialog-actions>
