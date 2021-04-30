@@ -6,3 +6,5 @@ How to run:
 3. / : npm install
 4. / : ng serve --open
 
+Username:admin
+Password:admin
